@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 
 /__pycache__
 environment variables
 /node_modules
 package-lock.json
 package.json
+=======
+environment variables
+*.pyc
+*.json
+/node_modules
+>>>>>>> Stashed changes
