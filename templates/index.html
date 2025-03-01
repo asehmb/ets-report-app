@@ -19,14 +19,23 @@
     <!--Floating buttons-->
     <div class="Buttons">
         <button href="index.html"><i class="fas fa-home"></i></button>
-        <button href="index.html"><i class="fas fa-search"></i></button>
+        <!-- <button id="openTabButton"><i class="fas fa-search"></i></button> -->
         <button href="index.html"><i class="fas fa-chart-line"></i></button>
         <button href="index.html"><i class="fas fa-bell"></i></button>
         <button href="index.html"><i class="fas fa-cog"></i></button>
     </div>
     <!--search bar-->
     <div class = "search-bar-container">
-        <input type = "text" class = "search-bar" id = "search-bar" placeholder = "Search">
+        <form id="search-form">
+            <input type = "text" class = "search-bar" id = "search-bar" placeholder = "Search">
+            <button type = "sumbit" class = "search-submit-button"><i class="fas fa-search"></i></button>
+        </form>
     </div>
+
+    <div class = "submit button" id = "submit-button">
+        <button>Submit</button>
+    </div>
+
+
 </body>
 </html>
