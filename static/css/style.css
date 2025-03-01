@@ -26,3 +26,32 @@
 .search-bar:focus {
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.6);
 }
+
+.Buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.Buttons button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Buttons button:hover {
+    background-color: #155ab6;
+}
