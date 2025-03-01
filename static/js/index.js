@@ -11,3 +11,11 @@ function myMap() {
 }
 
 window.myMap = myMap;
+
+function drop_pin(lat, lon, map){
+    var myLatLng = {lat: lat, lng: lon};
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+    });
+}
