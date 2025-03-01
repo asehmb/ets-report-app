@@ -28,24 +28,6 @@
 
     </div>
 
-    <script>
-        function sendData() {
-            var value = document.getElementById('search-bar').value;
-            $.ajax({
-                url: '/process',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({ 'value': value }),
-                success: function(response) {
-
-                    console.log(value);
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
-            }
-    </script>
     <!--search bar-->
     <div class = "search-bar-container">
         <input type = "text" class = "search-bar" id = "search-bar" placeholder = "Search" onclick="sendData()">
