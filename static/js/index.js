@@ -12,8 +12,8 @@ function myMap() {
     let button = document.getElementById("submit_report");
 
     button.addEventListener("click", function() {
-        let lat = document.getElementById("latitude").value;
-        let long = document.getElementById("longitude").value;
+        // let lat = document.getElementById("latitude").value;
+        // let long = document.getElementById("longitude").value;
         // let description = document.getElementById("description").value;
         // let severity = document.getElementById("severity").value;
         // let type = document.getElementById("type").value;
