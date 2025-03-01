@@ -11,19 +11,18 @@
 
 <body>
     
-    
-    <div class = "map" id="googleMap"></div>
-    
-    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
     <!--Floating buttons-->
     <div class="Buttons">
+        
         <button href="index.html"><i class="fas fa-home"></i></button>
         <!-- <button id="openTabButton"><i class="fas fa-search"></i></button> -->
         <button href="index.html"><i class="fas fa-chart-line"></i></button>
         <button href="index.html"><i class="fas fa-bell"></i></button>
         <button href="index.html"><i class="fas fa-cog"></i></button>
+
+
     </div>
+
     <!--search bar-->
     <div class = "search-bar-container">
         <form id="search-form">
@@ -37,5 +36,9 @@
     </div>
 
 
+    <div class = "map" id="googleMap"></div>
+
+    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
 </body>
 </html>
