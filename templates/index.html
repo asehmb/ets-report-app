@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
+
+    <div class = "map" id="googleMap"></div>
+
+    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
     
     <!--Floating buttons-->
     <div class="Buttons">
@@ -20,18 +26,31 @@
         <button href="index.html"><i class="fas fa-bell"></i></button>
         <button href="index.html"><i class="fas fa-cog"></i></button>
 
-
     </div>
 
+    <script>
+        function sendData() {
+            var value = document.getElementById('search-bar').value;
+            $.ajax({
+                url: '/process',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ 'value': value }),
+                success: function(response) {
+
+                    console.log(value);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+            }
+    </script>
     <!--search bar-->
     <div class = "search-bar-container">
-        <input type = "text" class = "search-bar" id = "search-bar" placeholder = "Search">
+        <input type = "text" class = "search-bar" id = "search-bar" placeholder = "Search" onclick="sendData()">
     </div>
 
 
-    <div class = "map" id="googleMap"></div>
-
-    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
 </body>
 </html>

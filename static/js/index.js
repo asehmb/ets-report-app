@@ -36,5 +36,7 @@ function myMap() {
     });
 }
 
+
+
 window.myMap = myMap;
 

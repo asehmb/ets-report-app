@@ -10,6 +10,15 @@ def homepage():
     """
     return render_template("index.html")
 
+@app.route('/process', methods=['POST'])
+def process():
+    data = request.get_json() # retrieve the data sent from JavaScript
+    # process the data using Python code
+    result = data['value'] * 2
+    print(result)
+    return jsonify(result=result) # return the result to JavaScript
+
+
 def save_to_bus_database():
     """
     purpose: saves to the bus stop database
