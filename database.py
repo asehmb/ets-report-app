@@ -48,7 +48,7 @@ class Databases:
         cursor, connection = self.open_database(self.__bus_database)
         cursor.execute("""
             DELETE FROM BusStopDatabase
-            WHERE bus_stop_num = ?
+            WHERE bus_stop_number = ?
         """, [bus_stop])
         self.close_database(connection)
         print(f"Bus stop {bus_stop} has been deleted!")
@@ -80,9 +80,10 @@ class Databases:
         bus_stop_info = self.get_a_bus_stop(bus_stop_num)
         cursor, connection = self.open_database(self.__bus_database)
         cursor.execute("""
-            UPDATE Bus_Stop_Database
-            SET bus_stop_num = ?, location = ?, num_of_reports = ?
-        """, [bus_stop_info[0], bus_stop_info[1], num_of_reports])
+            UPDATE BusStopDatabase
+            SET bus_stop_number = ?, location = ?, num_of_reports = ?
+            WHERE bus_stop_number = ?
+        """, [bus_stop_info[0], bus_stop_info[1], str(int(bus_stop_info[2]) + num_of_reports), bus_stop_num])
         self.close_database(connection)
         print(f"Bus stop number: {bus_stop_num} has been updated with {num_of_reports}")
     
@@ -94,8 +95,8 @@ class Databases:
         """
         cursor, connection = self.open_database(self.__bus_database)
         bus_stop_info = cursor.execute("""
-            SELECT * FROM Bus_Stop_Database
-            WHERE bus_stop_num = ?
+            SELECT * FROM BusStopDatabase
+            WHERE bus_stop_number = ?
         """, [bus_stop_num]).fetchone()
         self.close_database(connection)
         return bus_stop_info
