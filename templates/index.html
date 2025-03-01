@@ -11,6 +11,10 @@
 
 <body>
     
+    <div class = "map" id="googleMap"></div>
+
+    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
     <!--Floating buttons-->
     <div class="Buttons">
         
@@ -35,10 +39,5 @@
         <button>Submit</button>
     </div>
 
-
-    <div class = "map" id="googleMap"></div>
-
-    <script src="{{url_for('static', filename='js/index.js')}}" type="module"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap" async defer></script>
 </body>
 </html>
